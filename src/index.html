@@ -3,6 +3,7 @@
   <head>
     <script src="lib/angular/angular.js" type="text/javascript"></script>
     <script src="assets/js/controllers/hello.js" type="text/javascript"></script>
+    <script src="assets/js/controllers/contact.js" type="text/javascript"></script>
     <script src="assets/js/app.js" type="text/javascript"></script>
   </head>
   <body>
@@ -17,6 +18,20 @@
         <li ng-repeat="lettre in helloCtrl.splitToList(yourName) track by $index">{{lettre}}</li>
       </ul>
       <p>{{helloCtrl.splitToList(yourName)}}</p>
+    </div>
+    <div ng-controller="contactController as contactCtrl">
+      <h1>Contacts:</h1>
+      <label>Name only <input ng-model="search.name"></label><br>
+      <label>Phone only <input ng-model="search.phone"></label><br>
+      <label>City only <input ng-model="search.city"></label><br>
+      <table>
+      <tr><th>Name</th><th>Phone</th><th>City</th></tr>
+        <tr ng-repeat="contact in contactCtrl.contacts | filter:search">
+          <td ng-bind="contact.name"></td>
+          <td ng-bind="contact.phone"></td>
+          <td ng-bind="contact.city"></td>
+        </tr>
+      </table>
     </div>
   </body>
 </html>

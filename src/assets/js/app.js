@@ -1,6 +1,6 @@
 (function(angular){
   'use strict';
 
-  angular.module('myApp',['helloModule']);
+  angular.module('myApp',['helloModule', 'contactModule']);
 
 })(window.angular);
