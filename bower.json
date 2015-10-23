@@ -1,0 +1,19 @@
+{
+  "name": "AppliAngular",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Marin Clément <cle.marin.38@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/lib/",
+    "test",
+    "tests"
+  ]
+}
