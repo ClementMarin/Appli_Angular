@@ -10,9 +10,11 @@
       $routeProvider
         .when('/', {
           templateUrl: 'assets/template/checkinList.html',
+          controller: 'checkinListController'
         })
         .when('/checkin/:checkinId',{
           templateUrl: 'assets/template/checkinDetails.html',
+          controller: 'checkinDetailsController'
         });
   });
 
