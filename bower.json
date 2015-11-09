@@ -15,5 +15,8 @@
     "src/lib/",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "angular-route": "~1.4.7"
+  }
 }

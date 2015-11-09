@@ -2,49 +2,55 @@
 <html ng-app="myApp">
   <head>
     <script src="lib/angular/angular.js" type="text/javascript"></script>
+    <script src="lib/angular-route/angular-route.js" type="text/javascript"></script>
     <script src="assets/js/controllers/hello.js" type="text/javascript"></script>
     <script src="assets/js/controllers/contact.js" type="text/javascript"></script>
     <script src="assets/js/controllers/checkin.js" type="text/javascript"></script>
     <script src="assets/js/app.js" type="text/javascript"></script>
   </head>
   <body>
-    <div ng-controller="helloController as helloCtrl">
-      <label>Name:</label>
-      <input type="text" ng-model="yourName" placeholder="Enter a name here">
-      <h1>Hello {{yourName}} !</h1>
-      <p>{{helloCtrl.AfficheLongueur(yourName)}}</p>
-      <p>{{helloCtrl.inverseChaine(yourName)}}</p>
-      <ul>
-        <li ng-repeat="lettre in helloCtrl.splitToList(yourName) track by $index">{{lettre}}</li>
-      </ul>
-      <p>{{helloCtrl.splitToList(yourName)}}</p>
-    </div>
-    <hr>
-    <div ng-controller="contactController as contactCtrl">
-      <h1>Contacts:</h1>
-      <label>Name only <input ng-model="search.name"></label><br>
-      <label>Phone only <input ng-model="search.phone"></label><br>
-      <label>City only <input ng-model="search.city"></label><br>
-      <table>
-      <tr><th>Name</th><th>Phone</th><th>City</th></tr>
-        <tr ng-repeat="contact in contactCtrl.contacts | filter:search">
-          <td ng-bind="contact.name"></td>
-          <td ng-bind="contact.phone"></td>
-          <td ng-bind="contact.city"></td>
-        </tr>
-      </table>
-    </div>
-    <hr>
-    <div ng-controller="checkinController as checkinCtrl">
-      <h1>JSON:</h1>
-      <table>
-      <tr><th>Id</th><th>Lat</th><th>Long</th></tr>
-        <tr ng-repeat="checkin in checkins | orderBy:'id'">
-          <td ng-bind="checkin.id"></td>
-          <td ng-bind="checkin.lat"></td>
-          <td ng-bind="checkin.lng"></td>
-        </tr>
-      </table>
+    <div ng-view>
+      
     </div>
   </body>
 </html>
+
+<!--
+<div ng-controller="helloController as helloCtrl">
+  <label>Name:</label>
+  <input type="text" ng-model="yourName" placeholder="Enter a name here">
+  <h1>Hello {{yourName}} !</h1>
+  <p>{{helloCtrl.AfficheLongueur(yourName)}}</p>
+  <p>{{helloCtrl.inverseChaine(yourName)}}</p>
+  <ul>
+    <li ng-repeat="lettre in helloCtrl.splitToList(yourName) track by $index">{{lettre}}</li>
+  </ul>
+  <p>{{helloCtrl.splitToList(yourName)}}</p>
+</div>
+<hr>
+<div ng-controller="contactController as contactCtrl">
+  <h1>Contacts:</h1>
+  <label>Name only <input ng-model="search.name"></label><br>
+  <label>Phone only <input ng-model="search.phone"></label><br>
+  <label>City only <input ng-model="search.city"></label><br>
+  <table>
+  <tr><th>Name</th><th>Phone</th><th>City</th></tr>
+    <tr ng-repeat="contact in contactCtrl.contacts | filter:search">
+      <td ng-bind="contact.name"></td>
+      <td ng-bind="contact.phone"></td>
+      <td ng-bind="contact.city"></td>
+    </tr>
+  </table>
+</div>
+<hr>
+<div ng-controller="checkinController as checkinCtrl">
+  <h1>JSON:</h1>
+  <table>
+  <tr><th>Id</th><th>Lat</th><th>Long</th></tr>
+    <tr ng-repeat="checkin in checkins | orderBy:'id'">
+      <td ng-bind="checkin.id"></td>
+      <td ng-bind="checkin.lat"></td>
+      <td ng-bind="checkin.lng"></td>
+    </tr>
+  </table>
+</div>-->

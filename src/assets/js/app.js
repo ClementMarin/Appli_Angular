@@ -1,6 +1,19 @@
 (function(angular){
   'use strict';
 
-  angular.module('myApp',['helloModule', 'contactModule', 'checkinModule']);
+  angular.module('myApp',[
+    'ngRoute',
+    'helloModule', 'contactModule', 'checkinModule'
+  ])
+
+  .config(function($routeProvider){
+      $routeProvider
+        .when('/', {
+          templateUrl: 'assets/template/checkinList.html',
+        })
+        .when('/checkin/:checkinId',{
+          templateUrl: 'assets/template/checkinDetails.html',
+        });
+  });
 
 })(window.angular);
