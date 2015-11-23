@@ -15,7 +15,7 @@
 <body>
   <header ng-controller="headerController">
     <h1>AngularApp</h1>
-    <input type="button" value="Ajouter un champs" ng-click="ShowHide()"/>
+    <input type="button" style="margin:15px" value="Ajouter un champs" ng-click="ShowHide()"/>
     <form ng-show="IsVisible" ng-submit="submit()" ng-controller="checkinFormController">
       <input type="text" ng-model="lat" name="lat" placeholder="Latitude">
       <input type="text" ng-model="lng" name="lng" placeholder="Longitude">
