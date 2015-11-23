@@ -17,6 +17,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular-route": "~1.4.7"
+    "angular-route": "~1.4.7",
+    "ngmap": "~1.13.15"
   }
 }
