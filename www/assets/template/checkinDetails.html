@@ -1,0 +1,43 @@
+<h1 style="text-transform: capitalize;">{{check.user.name}}</h1>
+<div ng-controller="checkinDetailsController as checkinLCtrl">
+  <input type="button" class="btn btn-danger" style="float:right" value="Retour" ng-click="retour()"/>
+  <div class="row">
+    <div class="col-md-2">
+      <a href="{{check.user.picture}}">
+        <img style="width:100%" ng-src="{{check.user.picture}}"/>
+      </a>
+    </div>
+    <div class="col-md-3">
+      <p>
+        <b>Id:</b> {{check.user.id}} <br><br>
+        <b>Email:</b> {{check.user.email}}<br><br>
+        <b>Lat:</b> {{check.lat}}<br><br>
+        <b>Long:</b> {{check.lng}}<br><br>
+      </p>
+    </div>
+    <div class="col-md-3">
+      <div class="alert alert-info">
+        <img style="float:right" ng-src="img/_{{weather.weather[0].icon}}.png"/>
+        <h4>{{weather.name}}, <small>{{weather.main.temp}} °C</small></h4>
+        <p style="text-transform: capitalize;">{{weather.weather[0].description}} <small>({{weather.dt}})</small></p>
+        <p><b>Vent:</b> {{weather.wind.speed}} m/h, {{weather.wind.deg}}° </p>
+        <p><b>Humidité:</b> {{weather.main.humidity}} %</p>
+        <p><b>T min:</b> {{weather.main.temp_min}} °C, <b>T max:</b> {{weather.main.temp_max}} °C </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Call to Action Well -->
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="well text-center">
+        <map center="{{check.lat}}, {{check.lng}}" zoom="15">
+          <info-window position="{{check.lat}}, {{check.lng}}" visible="true">
+            <span>{{check.user.name}}</span>
+          </info-window>
+        </map>
+      </div>
+    </div>
+    <!-- /.col-lg-12 -->
+  </div>
+</div>

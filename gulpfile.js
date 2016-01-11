@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var useref = require('gulp-useref');
 var browserSync = require('browser-sync').create();
 
 
@@ -31,4 +32,16 @@ gulp.task('sass:watch', function () {
 // ici la tache par default
 gulp.task('default', function() {
   // place code for your default task here
+});
+
+gulp.task('copy-angular-template', function(done){
+    gulp.src(['src/assets/template/**/*'])
+    .pipe(gulp.dest('www/assets/template'))
+    .on('end', done);
+});
+
+gulp.task('make', ['copy-angular-template'], function () {
+    return gulp.src('src/*.html')
+        .pipe(useref())
+        .pipe(gulp.dest('www'));
 });

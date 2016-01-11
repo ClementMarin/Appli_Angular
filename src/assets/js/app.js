@@ -2,8 +2,8 @@
   'use strict';
 
   angular.module('myApp', [
-    'ngRoute', 'ngMap',
-    'helloModule', 'contactModule', 'checkinModule'
+    'ngRoute', 'ngMap', 'cgNotify',
+    'checkinModule', 'LocalStorageModule'
   ])
 
   .config(function($routeProvider){

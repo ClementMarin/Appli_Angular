@@ -12,7 +12,12 @@
     "bower": "^1.6.3",
     "browser-sync": "^2.9.11",
     "gulp": "^3.9.0",
+    "gulp-rev": "^6.0.1",
     "gulp-sass": "^2.0.4",
+    "gulp-useref": "^3.0.2",
     "sass": "^0.5.0"
+  },
+  "devDependencies": {
+    "gulp-useref": "^3.0.2"
   }
 }
