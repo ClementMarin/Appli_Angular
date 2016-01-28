@@ -1,0 +1,90 @@
+@import "inc/animate";
+/*
+body{
+  background-color: lightBlue;
+  text-align: center;
+}
+
+img{
+  float:left;
+  height:150px;
+  width:150px;
+  margin-right:20px;
+}
+
+div#corps{
+  background-color:white;
+  padding:15px 15px 5px 15px;
+  width:40%;
+  height: auto;
+  border-radius:5px;
+  border:1px solid black;
+  margin: 15px auto 0 auto;
+}
+
+p{
+  padding-top:14px;
+}
+
+* {margin: 0; padding: 0;}
+
+div.list {
+  width: 1000px;
+  margin: 50px auto 50px auto;
+}
+
+h1.title{
+  margin: 35px;
+}
+
+
+ul {
+  list-style-type: none;
+  width: 500px;
+  float: left;
+}
+
+h3 {
+  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+li img {
+  float: left;
+  margin: 0 15px 0 0;
+}
+
+li p {
+  font: 200 12px/1.5 Georgia, Times New Roman, serif;
+}
+
+li {
+  padding: 10px;
+  overflow: auto;
+}
+
+li:hover {
+  background: #6495ED;
+  cursor: pointer;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.form{
+  margin-top: 15px;
+  transition:all 1s ease;
+}
+*/
+.img-center {
+	margin: 0 auto;
+  width: 40%;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}

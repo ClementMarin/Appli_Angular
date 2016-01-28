@@ -1,0 +1,132 @@
+body {
+  background-color: #eee; }
+
+.showbox {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5%; }
+
+.loader {
+  position: relative;
+  margin: 0px auto;
+  width: 100px; }
+  .loader:before {
+    content: '';
+    display: block;
+    padding-top: 100%; }
+
+.circular {
+  animation: rotate 2s linear infinite;
+  height: 50%;
+  transform-origin: center center;
+  width: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto; }
+
+.path {
+  stroke-dasharray: 1,200;
+  stroke-dashoffset: 0;
+  animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  stroke-linecap: round; }
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg); } }
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1,200;
+    stroke-dashoffset: 0; }
+  50% {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -35px; }
+  100% {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -124px; } }
+
+@keyframes color {
+  100%, 0% {
+    stroke: #d62d20; }
+  40% {
+    stroke: #0057e7; }
+  66% {
+    stroke: #008744; }
+  80%, 90% {
+    stroke: #ffa700; } }
+
+body {
+  background-color: lightBlue;
+  text-align: center; }
+
+img {
+  float: left;
+  height: 150px;
+  width: 150px;
+  margin-right: 20px; }
+
+div#corps {
+  background-color: white;
+  padding: 15px 15px 5px 15px;
+  width: 40%;
+  height: auto;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin: 15px auto 0 auto; }
+
+p {
+  padding-top: 14px; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+div.list {
+  width: 1000px;
+  margin: 50px auto 50px auto; }
+
+h1.title {
+  margin: 35px; }
+
+ul {
+  list-style-type: none;
+  width: 500px;
+  float: left; }
+
+h3 {
+  font: bold 20px/1.5 Helvetica, Verdana, sans-serif; }
+
+li img {
+  float: left;
+  margin: 0 15px 0 0; }
+
+li p {
+  font: 200 12px/1.5 Georgia, Times New Roman, serif; }
+
+li {
+  padding: 10px;
+  overflow: auto; }
+
+li:hover {
+  background: #6495ED;
+  cursor: pointer; }
+
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold; }
+
+.form {
+  margin-top: 15px;
+  transition: all 1s ease; }
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.75), transparent); }
