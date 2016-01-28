@@ -1,0 +1,40 @@
+<div class="row" ng-controller="checkinDetailsController as checkinLCtrl">
+  <div class="col s12 m12 l12">
+    <input type="button" class="btn btn-danger" style="float:right" value="Retour" ng-click="retour()"/>
+  </div>
+  <div class="col s12 m4 l4">
+    <div class="card average">
+      <div style="height:5px" class="card-image">
+        <img class="circle" ng-src="{{check.user.picture}}">
+        <span class="card-title" style="text-transform:capitalize">{{check.user.name}}</span>
+      </div>
+      <div class="card-content">
+        <p><b>Lat:</b> {{check.lat}}</p>
+        <p><b>Long:</b> {{check.lng}}</p>
+      </div>
+      <div class="card-action">
+        <a href="mailto:{{check.user.email}}" title="{{check.user.email}}">Send an Email</a>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m8 l8">
+    <div class="card">
+      <div class="card-image">
+        <ng-map center="{{check.lat}}, {{check.lng}}" zoom="15">
+          <marker position="{{check.lat}}, {{check.lng}}" visible="true"></marker>
+      </ng-map>
+      </div>
+    <div class="card-content">
+      <ul style="margin:-10px 0 -10px 0" class="collection">
+        <li class="collection-item avatar">
+          <h5 style="margin:-5px 0 0 -50px;">{{weather.name}} - <small>{{weather.dt}}</small></h5>
+          <i class="material-icons circle white"><img ng-src="img/_{{weather.weather[0].icon}}.png"/></i>
+          <span class="title" style="text-transform: capitalize;">{{weather.weather[0].description}}, {{weather.main.temp}} °C</span>
+          <p><b>Vent:</b> {{weather.wind.speed}} m/s</p>
+          <p><b>Humidité:</b> {{weather.main.humidity}} %</p>
+          <p><b>T min:</b> {{weather.main.temp_min}} °C, <b>T max:</b> {{weather.main.temp_max}} °C </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
