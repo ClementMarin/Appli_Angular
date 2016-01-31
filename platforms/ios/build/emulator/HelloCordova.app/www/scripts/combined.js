@@ -30588,21 +30588,13 @@ i.style.opacity=tweenedOpacity}function h(){var a,b,c,d;a=Date.now(),b=a-B,B=a,c
 
   .controller('checkinSyncController', function($rootScope, $scope, $http, localStorageService,  notify){
     var self = this;
-    var iconB = false;
-    $scope.icon = 'notifications_none';
     var checkIns = localStorageService.get('checkIns');
     if(checkIns!==null && checkIns.length!== 0){
       $scope.nbCheckIns = checkIns.length;
-      iconB = true;
     }
     else {
       $scope.nbCheckIns = 0;
     }
-    $scope.$on("iconB", function(e){
-      if(iconB){
-        $scope.icon = 'notifications';
-      }
-    });
     $scope.$on("nbCheckIns", function(e){
       $scope.nbCheckIns++;
     });
@@ -30630,7 +30622,7 @@ i.style.opacity=tweenedOpacity}function h(){var a,b,c,d;a=Date.now(),b=a-B,B=a,c
           notify({
               message: 'Checkin ajouté avec succès !',
               classes: 'alert-danger',
-              position: 'center',
+              position: 'right',
               duration: 4000
             });
         }, function errorCallback(response) {
@@ -30638,7 +30630,7 @@ i.style.opacity=tweenedOpacity}function h(){var a,b,c,d;a=Date.now(),b=a-B,B=a,c
           notify({
               message: "Erreur ajout, vérifiez votre connexion internet !",
               classes: "alert-danger",
-              position: "center",
+              position: "right",
               duration: 4000
             });
         });
@@ -30678,7 +30670,6 @@ i.style.opacity=tweenedOpacity}function h(){var a,b,c,d;a=Date.now(),b=a-B,B=a,c
       checkIns.push(checkIn);
       localStorageService.set('checkIns', checkIns);
       $rootScope.$broadcast('nbCheckIns');
-      $rootScope.$broadcast('iconB');
     };
   })
 

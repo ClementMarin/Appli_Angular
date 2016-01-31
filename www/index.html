@@ -10,43 +10,59 @@
 
   <link rel="stylesheet" href="css/combined.css">
 </head>
-<body>
+<body ng-controller="headerController">
+  <div ng-controller="checkinSyncController"class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#/" class="brand-logo">AngularApp</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a onclick="$('#modal1').openModal();"><i class="material-icons right modal-trigger">add</i>Ajouter un checkin</a></li>
+          <li><a ng-click="post()"><i class="material-icons right">update</i>Synchroniser<span style="color:white" class="badge">{{nbCheckIns}}</span></a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a onclick="$('#modal1').openModal();"><i class="material-icons right modal-trigger">add</i>Ajouter un checkin</a></li>
+          <li><a ng-click="post()"><i class="material-icons right">update</i>Synchroniser<span class="badge">{{nbCheckIns}}</span></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
   <div class="container">
     <div class="row">
-      <header ng-controller="headerController">
-        <div class="col s12 m12 l12">
-          <h1>AngularApp</h1>
-          <div ng-controller="checkinSyncController">
-            <a style="float:right" class="btn-floating btn-large waves-effect waves-light red" ng-click="post()"><span style="color:white;margin-right:-10px" class="badge"><i class="material-icons">{{icon}}</i>{{nbCheckIns}}</span></a>
-          </div>
-          <a style="margin-bottom:15px" class="waves-effect waves-light btn-large" ng-click="ShowHide()">{{ajout}}</a>
-          <form class="form-inline" ng-show="IsVisible" ng-controller="checkinFormController">
-            <div class="row">
-              <div class="input-field col s12 m6 l4">
-                <i class="material-icons prefix">explore</i>
-                <input type="text" id="lat" ng-model="lat" name="lat" placeholder="47.95">
-                <label for="icon_telephone">Latitude</label>
-              </div>
-              <div class="input-field col s12 m6 l4">
-                  <i class="material-icons prefix">explore</i>
-                <input type="text" id="lng" ng-model="lng" name="lng" class="validate" placeholder="17.2">
-                <label for="icon_telephone">Longitude</label>
-              </div>
+    <div ng-view>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal bottom-sheet">
+      <div class="modal-content">
+        <a href="#/" class=" modal-action modal-close waves-effect waves-green btn-flat right"><i class="material-icons">exit_to_app</i></a>
+        <form class="form-inline" ng-controller="checkinFormController">
+          <div class="row">
+            <div class="input-field col s12 m8 l4">
+              <i class="material-icons prefix">explore</i>
+              <input type="text" id="lat" ng-model="lat" name="lat" placeholder="47.95">
+              <label for="icon_telephone">Latitude</label>
+            </div>
+            <div class="input-field col s12 m8 l4">
+              <i class="material-icons prefix">explore</i>
+              <input type="text" id="lng" ng-model="lng" name="lng" class="validate" placeholder="17.2">
+              <label for="icon_telephone">Longitude</label>
+            </div>
             <div class="col l2">
-              <input type="submit" ng-submit="submit()" class="btn btn-success btn-large waves-effect waves-light " name="check" >Ajouter</input>
+              <a class="btn-floating btn-large waves-effect waves-light" ng-click="submit()"><i class="material-icons prefix">add</i></a>
             </div>
             <div class="progress col s12 m12 l8 push-l1" ng-if="loading">
               <div class="indeterminate"></div>
             </div>
-            </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
-    </header>
-    <br><hr>
-    <div ng-view>
-
     </div>
   </div>
 </body>
 </html>
+<script type="text/javascript">
+  $( document ).ready(function(){
+    $(".button-collapse").sideNav();
+  });
+</script>
