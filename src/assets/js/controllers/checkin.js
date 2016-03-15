@@ -133,19 +133,21 @@
     };
   })
 
-  .controller('headerController', function($scope){
+  .controller('headerController', function($scope, $auth){
     $scope.IsVisible = false;
     $scope.isReturn = false;
     $scope.ajout = "Ajouter un champs";
-    $scope.ShowHide = function () {
-      if($scope.IsVisible === false){
-        $scope.IsVisible = true;
-        $scope.ajout = "Fermer l'ajout";
-      }
-      else{
-        $scope.IsVisible = false;
-        $scope.ajout = 'Ajouter un champs';
-      }
+
+    $scope.isAuthenticated = function() {
+      return $auth.isAuthenticated();
+    };
+
+    $scope.logout = function(){
+      $auth.logout()
+      .then(function(response) {
+        Materialize.toast('Vous êtes déconnecté !', 2000);
+        document.location.href = "/#/";
+      });
     };
   });
 })(window.angular);
