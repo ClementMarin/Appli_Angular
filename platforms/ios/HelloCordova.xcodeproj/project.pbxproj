@@ -41,6 +41,7 @@
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
 		AE5E9F2516D24C74AA2FDD1B /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = F11835ACACD54A8894EE86B7 /* CDVLocation.m */; };
 		E77E6FDC3D2F4E0E83AABF2B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F66600F725B447B38280F014 /* CoreLocation.framework */; };
+		6A629B0962CA4583BE7A560A /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6661602DF1D44F0090B9B934 /* CDVInAppBrowser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,8 @@
 		F11835ACACD54A8894EE86B7 /* CDVLocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVLocation.m"; path = "cordova-plugin-geolocation/CDVLocation.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		EF63FB7AEB0541618EF87FA3 /* CDVLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVLocation.h"; path = "cordova-plugin-geolocation/CDVLocation.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		F66600F725B447B38280F014 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreLocation.framework"; path = "System/Library/Frameworks/CoreLocation.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		6661602DF1D44F0090B9B934 /* CDVInAppBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVInAppBrowser.m"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		3E259A80428D4DC085274494 /* CDVInAppBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVInAppBrowser.h"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +214,8 @@
 			children = (
 				F11835ACACD54A8894EE86B7 /* CDVLocation.m */,
 				EF63FB7AEB0541618EF87FA3 /* CDVLocation.h */,
+				6661602DF1D44F0090B9B934 /* CDVInAppBrowser.m */,
+				3E259A80428D4DC085274494 /* CDVInAppBrowser.h */,
 			);
 			name = Plugins;
 			path = "HelloCordova/Plugins";
@@ -396,6 +401,7 @@
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				AE5E9F2516D24C74AA2FDD1B /* CDVLocation.m in Sources */,
+				6A629B0962CA4583BE7A560A /* CDVInAppBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
