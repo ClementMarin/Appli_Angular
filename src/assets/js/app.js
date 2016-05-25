@@ -35,6 +35,7 @@
     $authProvider.authToken = 'Bearer';
     $authProvider.storageType = 'localStorage';
 
+    // Facebook
     $authProvider.facebook({
       name: 'facebook',
       url: '/auth/facebook/',
@@ -47,6 +48,31 @@
       display: 'popup',
       type: '2.0',
       popupOptions: { width: 580, height: 400 }
+    });
+    
+    // Google
+    $authProvider.google({
+      url: '/auth/google',
+      authorizationEndpoint: 'https://accounts.google.com/o/oauth2/auth',
+      redirectUri: window.location.origin + '/auth/facebook/google/callback',
+      requiredUrlParams: ['scope', 'client_id'],
+      optionalUrlParams: ['display'],
+      client_id: '974568352136-of54g4234aeat1fmu6eudq4blqema56f.apps.googleusercontent.com',
+      scope: ['profile', 'email'],
+      scopePrefix: 'openid',
+      scopeDelimiter: ' ',
+      display: 'popup',
+      type: '2.0',
+      popupOptions: { width: 452, height: 633 }
+    });
+    
+    // Twitter
+    $authProvider.twitter({
+      url: '/auth/twitter',
+      authorizationEndpoint: 'https://api.twitter.com/oauth/authenticate',
+      redirectUri: window.location.origin + '/auth/facebook/twitter/callback',
+      type: '2.0',
+      popupOptions: { width: 495, height: 645 }
     });
   });
 
